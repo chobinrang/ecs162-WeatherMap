@@ -1,0 +1,55 @@
+body{
+    text-align: center;
+}
+header {
+    font-family: 'IBM Plex Sans', sans-serif;
+}
+h1 {
+    font-size: 45pt;
+    color: white;
+}
+h2 {
+    font-size: 33pt;
+    color: darkblue;
+}
+#search_bar {
+    color: white;
+}
+.cityname input[type=text]{
+    background-color: darkblue;
+    color: white;
+    border-width: 0px;
+    font-size: 20pt;
+}
+::placeholder{
+    color: white;
+}
+#current{
+    font-family: 'Saira Extra Condensed', sans-serif;
+    font-size: 25pt;
+    font-weight: 200;
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+.curr_conditions{
+    display: flex;
+    flex-direction: row;
+}
+.curr_time {
+    display: flex;
+    flex-direction: column;
+    padding-right: 15px;
+}
+.curr_temp{
+    font-size: 75pt;
+    border-left-style: solid;
+    border-width:2px;
+    padding-left: 15px;
+    border-left-color: darkblue;
+}
+#cover{
+    background-image: linear-gradient(rgb(73, 138, 220), rgb(98, 59, 156));
+}
+
+/*light font: 'Saira Extra Condensed', sans-serif; */
