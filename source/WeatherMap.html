@@ -7,7 +7,6 @@ Demo for making a request to OpenWeatherMap
 		<meta charset="UTF-8">
 		<link rel="stylesheet" type="text/css" href="reset.css">
 		<link rel="stylesheet" type="text/css" href="MobileMap.css">
-		
 		<meta name="viewport" content="width=device-width". initial-scale=1.0>
 		<link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:300" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,500" rel="stylesheet">
@@ -17,35 +16,76 @@ Demo for making a request to OpenWeatherMap
 	<body>
 		<div id="cover">
 			<header>
-				<h1>Local Weather Six Hour Forecast</h1>
+				<h1>Local Weather <br> Six Hour Forecast</h1>
 				<h2>Northern California with doppler radar</h2>
 			</header>
 
-			<div id="search_bar">
-				Forecast for 
-				<div class="cityname">
-					<input type="text"  placeholder="Davis, CA">
+			<div id="search_bar"> <!-- SEARCH BAR INFORMATION -->
+				<div class="forecast_for">
+					Forecast for 
 				</div>
-				<button id = "submit" onclick="submit()"> 
-					submit
-				</button>
+				<div class="cityname"> 
+					<input id = "city" type="text"  placeholder="Davis, CA">
+					<button id = "submit" onclick="makeCorsRequest()"> 
+						submit
+					</button>
+				</div>
 			</div>
-			<div id="current">
-				<img src="../assets/fewclouds-day.svg">
-				<div class="curr_conditions">
-					<div class="curr_time">
-							current <div id="time"> 12PM</div>
-					</div>
-					<div class="curr_temp">
-						67  &#176;
-					</div>
-				</div>				
+			<div>
+				<div id="current"> <!-- CURRENT CONDITIONS -->
+					<img src="../assets/fewclouds-day.svg">
+					<div class="curr_conditions">
+						<div class="curr_time">
+								current <span class="time"> 12PM </span>
+						</div>
+						<div class="curr_temp">  <span id="temp"> 67 </span>  &#176; </div>
+					</div>				
+				</div>
 			</div>
-			<button id="arrow" onclick="<""></button>
+			<div class="dopplerimages"> <!-- DOPPLER DISPLAY FOR WEB/TABLET VIEW -->
+				<img id="short" src="http://radar.weather.gov/ridge/Overlays/Topo/Short/DAX_Topo_Short.jpg">
+				<img id="radar" src= "https://radar.weather.gov/ridge/RadarImg/N0R/DAX_N0R_0.gif">
+				<img id="cities" src="http://radar.weather.gov/ridge/Overlays/Cities/Short/DAX_City_Short.gif">
+			</div>
+			<button id="arrow"> < </button> 
+		</div>
+
+		<div class="bottom">
+			<div id="ONE">
+				<div id="ONEtime"> </div>
+				<img src="" alt="img1"> 
+				<div id="ONEdeg"> </div>				
+			</div>
+			<hr>
+			<div id="TWO">
+				<div id="TWOtime"> </div>
+				<img src="" alt="img2"> 
+				<div id="TWOdeg"> </div>	
+			</div>
+			<hr>
+			<div id="THREE">
+				<div id="THREEtime"> </div>
+				<img src="" alt="img3"> 
+				<div id="THREEdeg"> </div>	
+			</div>
+			<hr>
+			<div id="FOUR">
+				<div id="FOURtime"> </div>
+				<img src="" alt="img4"> 
+				<div id="FOURdeg"> </div>		
+			</div>
+			<hr>
+			<div id="FIVE">
+				<div id="FIVEtime"> </div>
+				<img src="" alt="img5"> 
+				<div id="FIVEdeg"> </div>		
+			</div>
 		</div>
 
 	<!-- execute the Javascript for this page --> 
-	<script src="WeatherMap.js"></script>
+	<script src="MakeRequest.js"></script>
+	<script src="collectPastDoppler.js"></script>
+
 
 	</body>
 </html>
