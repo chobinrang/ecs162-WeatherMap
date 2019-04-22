@@ -103,14 +103,14 @@ h2 {
 hr {
     width: 100%;
 }
-
-#arrow{
-    transform: rotate(90deg);
-    color: darkblue;
-    background-color: transparent;
+#arrow {
+    background: transparent;
     border: none;
-    font-size: 2em;
-    color: white;
+}
+#arrow img{
+    color: darkblue;
+    width: 50px;
+    height: 50px;
 }
 
 /* ---------------------------------- DOPPLER IMAGE ------------------------------------------- */
