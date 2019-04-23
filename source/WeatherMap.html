@@ -26,7 +26,7 @@ Demo for making a request to OpenWeatherMap
 				</div>
 				<div class="cityname"> 
 					<input id = "city" type="text"  placeholder="Davis, CA">
-					<button id = "submit" onclick="makeRequest()"> 
+					<button id = "submit" onclick="makeRequest()" style="color: white"> 
 						submit
 					</button>
 				</div>
@@ -47,35 +47,37 @@ Demo for making a request to OpenWeatherMap
 				<img id="radar" src= "https://radar.weather.gov/ridge/RadarImg/N0R/DAX_N0R_0.gif">
 				<img id="cities" src="http://radar.weather.gov/ridge/Overlays/Cities/Short/DAX_City_Short.gif">
 			</div>
-			<button id="arrow"> <img src="../assets/uparrow.png"> </button> 
+			<button id="arrow"> <img id="downarrow" src="../assets/arrow.png"> </button> 
 		</div>
 
-		<div class="bottom">
-			<div id="ONE">
-				<div id="ONEtime"> </div>
+	
+		<div class="bottom">	
+			<button id="arrow"> <img id="uparrow" src="../assets/uparrow.png"> </button>	
+			<div class="FutureConditions">
+				<div id="time"> HELLO </div>
 				<img src="../assets/brokencloud.svg" alt="img1"> 
 				<div id="ONEdeg"> </div>				
 			</div>
 			<hr>
-			<div id="TWO">
+			<div class="FutureConditions">
 				<div id="TWOtime"> </div>
 				<img src="../assets/rain-day.svg" alt="img2"> 
 				<div id="TWOdeg"> </div>	
 			</div>
 			<hr>
-			<div id="THREE">
+			<div class="FutureConditions">
 				<div id="THREEtime"> </div>
 				<img src="../assets/fewclouds-day.svg" alt="img3"> 
 				<div id="THREEdeg"> </div>	
 			</div>
 			<hr>
-			<div id="FOUR">
+			<div class="FutureConditions">
 				<div id="FOURtime"> </div>
 				<img src="../assets/clearsky.svg" alt="img4"> 
 				<div id="FOURdeg"> </div>		
 			</div>
 			<hr>
-			<div id="FIVE">
+			<div class="FutureConditions">
 				<div id="FIVEtime"> </div>
 				<img src="../assets/clearsky.svg" alt="img5"> 
 				<div id="FIVEdeg"> </div>		
@@ -84,7 +86,7 @@ Demo for making a request to OpenWeatherMap
 
 	<!-- execute the Javascript for this page --> 
 	<script src="MakeRequest.js"></script>
-	<!-- <script src="collectPastDoppler.js"></script> -->
+	<script src="collectPastDoppler.js"></script>
 
 
 	</body>
