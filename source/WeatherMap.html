@@ -6,8 +6,9 @@ Demo for making a request to OpenWeatherMap
 	<head>
 		<meta charset="UTF-8">
 		<link rel="stylesheet" type="text/css" href="reset.css">
-		<link rel="stylesheet" type="text/css" href="MobileMap.css" media="screen and (max-width: 500px)">
-
+		<link rel="stylesheet" type="text/css" href="MobileMap.css" media="screen and (max-width: 767px)">
+		<link rel="stylesheet" type="text/css" href="TabletMap.css" media="screen and (min-width: 768px) and (max-width: 1080px)">
+		<link rel="stylesheet" type="text/css" href="DesktopMap.css" media="screen and (min-width: 1081px)">
 		<meta name="viewport" content="width=device-width". initial-scale=1.0>
 		<link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:300" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,500" rel="stylesheet">
@@ -16,74 +17,81 @@ Demo for making a request to OpenWeatherMap
 
 	<body>
 		<div id="parent">
-		<div id="cover">
-			<header>
-				<h1>Local Weather <br> Six Hour Forecast</h1>
-				<h2>Northern California with doppler radar</h2>
-			</header>
-
-			<div id="search_bar"> <!-- SEARCH BAR INFORMATION -->
-				<div class="forecast_for">
-					Forecast for 
+			<div id="cover">
+				<div id="dop1" class="dopplerimages" > <!-- DOPPLER DISPLAY FOR WEB/TABLET VIEW -->
+					<img id="short1" src="http://radar.weather.gov/ridge/Overlays/Topo/Short/DAX_Topo_Short.jpg">
+					<img id="radar1" src= "https://radar.weather.gov/ridge/RadarImg/N0R/DAX_N0R_0.gif">
+					<img id="cities1" src="http://radar.weather.gov/ridge/Overlays/Cities/Short/DAX_City_Short.gif">
 				</div>
-				<div class="cityname"> 
-					<input id = "city" type="text"  placeholder="Davis, CA">
-					<button id = "submit" onclick="makeRequest()" style="color: white"> 
-						submit
-					</button>
-				</div>
-			</div>
-			<div>
-				<div id="current"> <!-- CURRENT CONDITIONS -->
-					<img id="currsky" src="../assets/fewclouds-day.svg">
-					<div class="curr_conditions">
-						<div class="curr_time">
-								current <span id="time">  </span>
+				<div class="left">
+					<header>
+						<h1>Local Weather <br id="breakline"> Six Hour Forecast</h1>
+						<h2>Northern California with doppler radar</h2>
+					</header>
+					<div id="search_bar"> <!-- SEARCH BAR INFORMATION -->
+						<div class="forecast_for">
+							Forecast for 
 						</div>
-						<div class="curr_temp">  <span id="temp"> </span>&#176; </div>
-					</div>				
+						<div class="cityname"> 
+							<input id = "city" type="text"  placeholder="Davis, CA">
+							<button id = "submit" onclick="makeRequest()" style="color: white"> 
+								submit
+							</button>
+						</div>
+					</div>
+					<div class="tabletconditions">
+						<div id="current"> <!-- CURRENT CONDITIONS -->
+							<img id="currsky" src="../assets/fewclouds-day.svg">
+							<div class="curr_conditions">
+								<div class="curr_time">
+										current <span id="time">  </span>
+								</div>
+								<img id="currsky2" src="../assets/fewclouds-day.svg">
+								<div class="curr_temp">  <span id="temp"> </span>&#176; </div>
+							</div>				
+						</div>
+						<div id = "dop2" class="dopplerimages"> <!-- DOPPLER DISPLAY FOR WEB/TABLET VIEW -->
+							<img id="short" src="http://radar.weather.gov/ridge/Overlays/Topo/Short/DAX_Topo_Short.jpg">
+							<img id="radar" src= "https://radar.weather.gov/ridge/RadarImg/N0R/DAX_N0R_0.gif">
+							<img id="cities" src="http://radar.weather.gov/ridge/Overlays/Cities/Short/DAX_City_Short.gif">
+						</div>
+					</div>
+				</div>
+				<button onclick="slide()" id="darrow"> <img id="downarrow" src="../assets/arrow.png"> </button> 
+			</div>
+
+			<div id="bottom">	
+				<button onclick="slidedown()" id="uarrow"> <img id="uparrow" src="../assets/uparrow.png"> </button>	
+				<div class="FutureConditions">
+					<div class="time" id="OneTime"> </div>
+					<img id="OneSky" src="../assets/brokencloud.svg" alt="img1"> 
+					<div class="temp"> <span id="OneDeg"></span> &#176; </div> 				
+				</div>
+				<hr>
+				<div class="FutureConditions">
+					<div class="time" id="TwoTime"> </div>
+					<img id="TwoSky" src="../assets/rain-day.svg" alt="img2"> 
+					<div class="temp"> <span id="TwoDeg"> </span> &#176; </div>	
+				</div>
+				<hr>
+				<div class="FutureConditions">
+					<div class="time" id="ThreeTime"> </div>
+					<img id="ThreeSky" src="../assets/fewclouds-day.svg" alt="img3"> 
+					<div class="temp"> <span id="ThreeDeg"></span> &#176; </div>	
+				</div>
+				<hr>
+				<div class="FutureConditions">
+					<div class="time" id="FourTime"> </div>
+					<img id="FourSky" src="../assets/clearsky.svg" alt="img4"> 
+					<div class="temp"> <span id="FourDeg"></span> &#176;</div>		
+				</div>
+				<hr>
+				<div class="FutureConditions">
+					<div class="time" id="FiveTime"> </div>
+					<img id="FiveSky" src="../assets/clearsky.svg" alt="img5"> 
+					<div class="temp"> <span id="FiveDeg"></span> &#176;</div>		
 				</div>
 			</div>
-			<div class="dopplerimages"> <!-- DOPPLER DISPLAY FOR WEB/TABLET VIEW -->
-				<img id="short" src="http://radar.weather.gov/ridge/Overlays/Topo/Short/DAX_Topo_Short.jpg">
-				<img id="radar" src= "https://radar.weather.gov/ridge/RadarImg/N0R/DAX_N0R_0.gif">
-				<img id="cities" src="http://radar.weather.gov/ridge/Overlays/Cities/Short/DAX_City_Short.gif">
-			</div>
-			<button onclick="slide()" id="darrow"> <img id="downarrow" src="../assets/arrow.png"> </button> 
-		</div>
-
-		<div id="bottom">	
-			<button onclick="slidedown()" id="uarrow"> <img id="uparrow" src="../assets/uparrow.png"> </button>	
-			<div class="FutureConditions">
-				<div class="time" id="OneTime"> </div>
-				<img id="OneSky" src="../assets/brokencloud.svg" alt="img1"> 
-				<div class="temp"> <span id="OneDeg"></span> &#176; </div> 				
-			</div>
-			<hr>
-			<div class="FutureConditions">
-				<div class="time" id="TwoTime"> </div>
-				<img id="TwoSky" src="../assets/rain-day.svg" alt="img2"> 
-				<div class="temp"> <span id="TwoDeg"> </span> &#176; </div>	
-			</div>
-			<hr>
-			<div class="FutureConditions">
-				<div class="time" id="ThreeTime"> </div>
-				<img id="ThreeSky" src="../assets/fewclouds-day.svg" alt="img3"> 
-				<div class="temp"> <span id="ThreeDeg"></span> &#176; </div>	
-			</div>
-			<hr>
-			<div class="FutureConditions">
-				<div class="time" id="FourTime"> </div>
-				<img id="FourSky" src="../assets/clearsky.svg" alt="img4"> 
-				<div class="temp"> <span id="FourDeg"></span> &#176;</div>		
-			</div>
-			<hr>
-			<div class="FutureConditions">
-				<div class="time" id="FiveTime"> </div>
-				<img id="FiveSky" src="../assets/clearsky.svg" alt="img5"> 
-				<div class="temp"> <span id="FiveDeg"></span> &#176;</div>		
-			</div>
-		</div>
 		</div>
 	<!-- execute the Javascript for this page --> 
 	<script src="MakeRequest.js"></script>

@@ -78,6 +78,9 @@ function CurrentConditions(){
   var curr_conditions = curr_weather.weather[0].icon;
   var sky = document.getElementById("currsky");
   sky.src = "../assets/"+curr_conditions+".svg";
+  sky = document.getElementById("currsky2");
+  sky.src = "../assets/"+curr_conditions+".svg";
+
 
   if (time2 < 12 ) {
     AMPM = 'AM';

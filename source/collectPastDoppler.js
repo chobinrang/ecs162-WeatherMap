@@ -54,6 +54,8 @@ function callImage() {
 	}
 	var gallery = document.getElementById("radar");
 	gallery.src = imageArray[index].src;
+	gallery = document.getElementById("radar1");
+	gallery.src = imageArray[index].src;
 	index++;
 }
 

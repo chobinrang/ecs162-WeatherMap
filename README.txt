@@ -1,0 +1,1 @@
+Renamed picture files in assets. 
