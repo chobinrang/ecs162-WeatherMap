@@ -144,6 +144,7 @@ button{
     justify-content: center;
     padding:0px 15px;
     align-items: center;
+    flex:20%;
 }
 .time{
     font-size: 2em;
@@ -184,7 +185,7 @@ button{
     clip-path: circle(37%);
     position: absolute;
     width: 100%;
-    right: 20px;
+    right: 1px;
     top: 0px;
 }
 #cities1 {

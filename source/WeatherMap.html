@@ -1,27 +1,27 @@
 <!--
 Demo for making a request to OpenWeatherMap
 -->
-
-<html>
+<!doctype HTML>
+<html lang="en">
 	<head>
 		<meta charset="UTF-8">
 		<link rel="stylesheet" type="text/css" href="reset.css">
 		<link rel="stylesheet" type="text/css" href="MobileMap.css" media="screen and (max-width: 767px)">
 		<link rel="stylesheet" type="text/css" href="TabletMap.css" media="screen and (min-width: 768px) and (max-width: 1080px)">
 		<link rel="stylesheet" type="text/css" href="DesktopMap.css" media="screen and (min-width: 1081px)">
-		<meta name="viewport" content="width=device-width". initial-scale=1.0>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:300" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,500" rel="stylesheet">
-		<title></title>
+		<title>Weather</title>
 	</head>
 
 	<body>
 		<div id="parent">
 			<div id="cover">
 				<div id="dop1" class="dopplerimages" > <!-- DOPPLER DISPLAY FOR WEB/TABLET VIEW -->
-					<img id="short1" src="http://radar.weather.gov/ridge/Overlays/Topo/Short/DAX_Topo_Short.jpg">
-					<img id="radar1" src= "https://radar.weather.gov/ridge/RadarImg/N0R/DAX_N0R_0.gif">
-					<img id="cities1" src="http://radar.weather.gov/ridge/Overlays/Cities/Short/DAX_City_Short.gif">
+					<img id="short1" src="http://radar.weather.gov/ridge/Overlays/Topo/Short/DAX_Topo_Short.jpg" alt="north CA">
+					<img id="radar1" src= "https://radar.weather.gov/ridge/RadarImg/N0R/DAX_N0R_0.gif" alt="radar">
+					<img id="cities1" src="http://radar.weather.gov/ridge/Overlays/Cities/Short/DAX_City_Short.gif" alt="city">
 				</div>
 				<div class="left">
 					<header>
@@ -41,27 +41,27 @@ Demo for making a request to OpenWeatherMap
 					</div>
 					<div class="tabletconditions">
 						<div id="current"> <!-- CURRENT CONDITIONS -->
-							<img id="currsky" src="../assets/fewclouds-day.svg">
+							<img id="currsky" src="../assets/fewclouds-day.svg" alt="curr description">
 							<div class="curr_conditions">
 								<div class="curr_time">
 										current <span id="time">  </span>
 								</div>
-								<img id="currsky2" src="../assets/fewclouds-day.svg">
+								<img id="currsky2" src="../assets/fewclouds-day.svg" alt="curr description">
 								<div class="curr_temp">  <span id="temp"> </span>&#176; </div>
 							</div>				
 						</div>
 						<div id = "dop2" class="dopplerimages"> <!-- DOPPLER DISPLAY FOR WEB/TABLET VIEW -->
-							<img id="short" src="http://radar.weather.gov/ridge/Overlays/Topo/Short/DAX_Topo_Short.jpg">
-							<img id="radar" src= "https://radar.weather.gov/ridge/RadarImg/N0R/DAX_N0R_0.gif">
-							<img id="cities" src="http://radar.weather.gov/ridge/Overlays/Cities/Short/DAX_City_Short.gif">
+							<img id="short" src="http://radar.weather.gov/ridge/Overlays/Topo/Short/DAX_Topo_Short.jpg" alt="north CA">
+							<img id="radar" src= "https://radar.weather.gov/ridge/RadarImg/N0R/DAX_N0R_0.gif" alt="radar">
+							<img id="cities" src="http://radar.weather.gov/ridge/Overlays/Cities/Short/DAX_City_Short.gif" alt="city">
 						</div>
 					</div>
 				</div>
-				<button onclick="slide()" id="darrow"> <img id="downarrow" src="../assets/arrow.png"> </button> 
+				<button onclick="slide()" id="darrow"> <img id="downarrow" src="../assets/arrow.png" alt="upArrow"> </button> 
 			</div>
 
 			<div id="bottom">	
-				<button onclick="slidedown()" id="uarrow"> <img id="uparrow" src="../assets/uparrow.png"> </button>	
+				<button onclick="slidedown()" id="uarrow"> <img id="uparrow" src="../assets/uparrow.png" alt="DownArrow"> </button>	
 				<div class="FutureConditions">
 					<div class="time" id="OneTime"> </div>
 					<img id="OneSky" src="../assets/brokencloud.svg" alt="img1"> 

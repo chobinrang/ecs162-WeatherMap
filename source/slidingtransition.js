@@ -12,7 +12,7 @@ function slidedown(){
     var box = document.getElementById("bottom");
     box.style.top = '100%';
     var cover = document.getElementById("cover");
-    cover.style.height = "100%";
+    cover.style.height = "100vh";
     cover.style.padding = "0.5em";
 
     //cover.style.display = "block";
